@@ -26,16 +26,7 @@
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0c1018; --surface: #141a24; --sunk: #1a2230; --ink: #eef2f7; --ink-2: #c9d1dc;
-    --muted: #8d99a8; --line: #253041; --accent: #7c9cff; --accent-ink: #0c1018; --accent-soft: #1c2742;
-    --green: #4fd1a1; --green-soft: #12291f; --blue: #7c9cff; --blue-soft: #1c2742;
-    --amber: #f1b45c; --amber-soft: #2d2212;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
-    color-scheme: dark;
-  }
-}
+/* Light is the default; dark only when the visitor turns it on with the toggle. */
 :root[data-theme="dark"] {
   --bg: #0c1018; --surface: #141a24; --sunk: #1a2230; --ink: #eef2f7; --ink-2: #c9d1dc;
   --muted: #8d99a8; --line: #253041; --accent: #7c9cff; --accent-ink: #0c1018; --accent-soft: #1c2742;
@@ -95,10 +86,6 @@ code { font-family: var(--f-mono); font-size: .88em; background: var(--sunk); pa
 .theme-btn .moon { display: none; }
 :root[data-theme="dark"] .theme-btn .sun { display: none; }
 :root[data-theme="dark"] .theme-btn .moon { display: block; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme-btn .sun { display: none; }
-  :root:not([data-theme="light"]) .theme-btn .moon { display: block; }
-}
 @media (max-width: 820px) {
   .menu-btn { display: grid; }
   .nav-links {
