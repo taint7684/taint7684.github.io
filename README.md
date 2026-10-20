@@ -26,7 +26,7 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 | Câu giới thiệu | `index.html`, phần `HERO` |
 | Hàng domain | `index.html`, khối `class="domains"` — `class="tag core"` là domain chính (tô xanh) |
 | 4 con số nổi bật | `index.html`, khối `class="stats"` |
-| Thẻ dự án trên trang chủ | `index.html`, các khối `<article class="project …">` |
+| Thẻ dự án trên trang chủ | `index.html`, các khối `<article class="work-card …">` (lưới 2×2) |
 | Kỹ năng | `index.html`, mỗi kỹ năng là một `<li class="tag">…</li>` |
 | Kinh nghiệm | `index.html`, mỗi công ty là một `<li class="job">` |
 | Email, GitHub, LinkedIn, số điện thoại | `index.html`, phần `CONTACT` (LinkedIn và SĐT đang bị comment — bỏ `<!--` `-->` để hiện) |
@@ -48,7 +48,11 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 </figure>
 ```
 
-Màu của từng dự án: `theme-green` (EUDR), `theme-blue` (BHXH), `theme-violet` (Battery 2030), `theme-amber` (HL-OMS). Số thứ tự case nằm ở `<span class="case-no">`. Ảnh trong thẻ dự án có class `fill` để tràn kín khung. Thêm dự án mới thì copy một khối `<article class="project …">`.
+Màu của từng dự án: `theme-green` (EUDR), `theme-blue` (BHXH), `theme-violet` (Battery 2030), `theme-amber` (HL-OMS). Số thứ tự case nằm ở `<span class="case-no">`. Ảnh trong thẻ dự án có class `fill` để tràn kín khung. Thêm dự án mới thì copy một khối `<article class="work-card …">`.
+
+## Hình minh họa đầu trang
+
+Hình bên phải phần đầu trang là SVG vẽ tay ngay trong `index.html` (khối `<svg class="illu">`), không dùng ảnh cá nhân hay ảnh có bản quyền.
 
 ## CV
 
