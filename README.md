@@ -8,6 +8,7 @@ Trang portfolio tĩnh (HTML + CSS + JS), không cần build. Mở `index.html` b
 index.html                    Trang chủ: giới thiệu, domain, 4 dự án, cách làm việc, kỹ năng, kinh nghiệm, liên hệ
 projects/eudr-coffee.html     Case study EUDR
 projects/social-insurance.html  Case study BHXH & TNCN (ẩn danh, không lộ thông tin khách)
+projects/sim-handbook.html    Sổ tay nghiệp vụ BHXH (tiếng Việt) — đã tắt toàn bộ link xem giao diện FIS
 projects/battery-2030.html    Case study Battery 2030 (số 3)
 projects/hl-oms.html          Case study HL-OMS (số 4)
 assets/style.css              Giao diện — không cần sửa
@@ -61,4 +62,6 @@ Lưu CV thành `assets/cv/Nguyen-Tan-Tai-CV.pdf`. Đổi tên file thì sửa li
 
 ## Lưu ý BHXH / NDA
 
-Trang `social-insurance.html` không có tên khách, tên sản phẩm, mã nội bộ, ảnh màn hình hay link tài liệu nội bộ. Nếu thêm nội dung thì giữ đúng nguyên tắc đó: chỉ dùng luật công khai và mô tả phương pháp làm việc.
+Trang `social-insurance.html` và `sim-handbook.html` không có tên khách, tên sản phẩm, mã nội bộ, ảnh màn hình hay link tài liệu nội bộ. Nếu thêm nội dung thì giữ đúng nguyên tắc đó: chỉ dùng luật công khai và mô tả phương pháp làm việc.
+
+Nếu cập nhật sổ tay từ bản gốc `../so-tay-sim.html`: chép đè vào `projects/sim-handbook.html` rồi nhờ Claude tắt lại link Artifact (`const ART={}`), bỏ mục "Giao diện 38 màn hình" và thêm thanh quay lại case study.
