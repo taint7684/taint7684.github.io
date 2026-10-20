@@ -5,10 +5,11 @@ Trang portfolio tĩnh (HTML + CSS + JS), không cần build. Mở `index.html` b
 ## Cấu trúc
 
 ```
-index.html                    Trang chủ: giới thiệu, 3 dự án, cách làm việc, kỹ năng, kinh nghiệm, liên hệ
+index.html                    Trang chủ: giới thiệu, domain, 4 dự án, cách làm việc, kỹ năng, kinh nghiệm, liên hệ
 projects/eudr-coffee.html     Case study EUDR
 projects/social-insurance.html  Case study BHXH & TNCN (ẩn danh, không lộ thông tin khách)
-projects/hl-oms.html          Case study HL-OMS
+projects/battery-2030.html    Case study Battery 2030 (số 3)
+projects/hl-oms.html          Case study HL-OMS (số 4)
 assets/style.css              Giao diện — không cần sửa
 assets/main.js                Hiệu ứng (menu mobile, sáng/tối, phóng ảnh) — không cần sửa
 assets/img/                   Ảnh (.webp)
@@ -21,7 +22,8 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 
 | Muốn sửa | Ở đâu |
 |---|---|
-| Câu giới thiệu, dòng "Open to…" | `index.html`, phần `HERO` |
+| Câu giới thiệu | `index.html`, phần `HERO` |
+| Hàng domain | `index.html`, khối `class="domains"` — `class="tag core"` là domain chính (tô xanh) |
 | 4 con số nổi bật | `index.html`, khối `class="stats"` |
 | Thẻ dự án trên trang chủ | `index.html`, các khối `<article class="project …">` |
 | Kỹ năng | `index.html`, mỗi kỹ năng là một `<li class="tag">…</li>` |
@@ -45,7 +47,7 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 </figure>
 ```
 
-Màu của từng dự án: `theme-green` (EUDR), `theme-blue` (BHXH), `theme-amber` (HL-OMS). Thêm dự án mới thì copy một khối `<article class="project …">`.
+Màu của từng dự án: `theme-green` (EUDR), `theme-blue` (BHXH), `theme-violet` (Battery 2030), `theme-amber` (HL-OMS). Số thứ tự case nằm ở `<span class="case-no">`. Ảnh trong thẻ dự án có class `fill` để tràn kín khung. Thêm dự án mới thì copy một khối `<article class="project …">`.
 
 ## CV
 
