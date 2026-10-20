@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>HL-OMS — Case Study · Nguyen Tan Tai</title>
+  <meta name="description" content="Business analysis case study: replacing paper order tickets with an order management system for a Sydney restaurant.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap">
+  <link rel="stylesheet" href="../assets/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232f5be0'/%3E%3Ctext x='16' y='21' font-family='Arial' font-size='13' font-weight='700' fill='white' text-anchor='middle'%3ETN%3C/text%3E%3C/svg%3E">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+</head>
+<body class="theme-amber">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <nav class="container nav" aria-label="Main">
+    <a class="brand" href="../index.html"><span class="brand-mark">TN</span><span>Nguyen Tan Tai</span></a>
+    <ul class="nav-links">
+      <li><a href="../index.html#projects">Projects</a></li>
+      <li><a href="../index.html#approach">Approach</a></li>
+      <li><a href="../index.html#skills">Skills</a></li>
+      <li><a href="../index.html#experience">Experience</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="icon-btn theme-btn" type="button" aria-label="Toggle dark mode">
+      <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </nav>
+</header>
+
+<main id="main">
+  <div class="container cs-hero">
+    <a class="back" href="../index.html#projects">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>All case studies</a>
+    <span class="tone-badge">Self-initiated · Restaurant operations</span>
+    <h1>HL-OMS: from paper tickets to a real-time ordering system</h1>
+    <p class="lead">A Vietnamese restaurant in Sydney CBD loses money and time to handwritten order tickets. I took the project from first meeting to UAT, a working prototype and a pitch.</p>
+
+    <dl class="meta">
+      <div><dt>Role</dt><dd>Business Analyst at a software vendor</dd></div>
+      <div><dt>Method</dt><dd>4-week discovery + 5 two-week sprints</dd></div>
+      <div><dt>Solution</dt><dd>Web app (PWA), 4 sub-apps</dd></div>
+      <div><dt>Data</dt><dd>Simulated client for practice</dd></div>
+    </dl>
+
+    <div class="btn-row" style="margin-top:20px">
+      <a class="btn btn-primary btn-sm" href="https://taint7684.github.io/hl-oms-ba/07_UIUX/prototype/" target="_blank" rel="noopener">Clickable prototype ↗</a>
+      <a class="btn btn-sm" href="https://github.com/taint7684/hl-oms-ba" target="_blank" rel="noopener">GitHub repository ↗</a>
+    </div>
+
+    <figure class="cs-cover shot">
+      <img src="../assets/img/hloms-cover.webp" alt="HL-OMS prototype: kitchen display with allergy and late-dish alerts, waiter app, cashier and manager reports" width="1800" height="884">
+    </figure>
+  </div>
+
+  <div class="container cs-layout">
+    <nav class="toc" aria-label="On this page">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#design">Design</a></li>
+        <li><a href="#validation">Validation</a></li>
+        <li><a href="#value">Business value</a></li>
+        <li><a href="#learned">What I learned</a></li>
+      </ol>
+    </nav>
+
+    <article class="prose">
+      <section id="problem">
+        <h2>The problem</h2>
+        <p>Waiters write orders on paper and walk them to the kitchen. At a Friday peak of 45 orders an hour this produces measurable losses:</p>
+        <div class="kpis">
+          <div class="kpi"><b>3–5</b><span>wrong or missed dishes per day (~AUD 900/month in remakes)</span></div>
+          <div class="kpi"><b>22 min</b><span>average wait for the first dish at peak</span></div>
+          <div class="kpi"><b>1–2</b><span>wrong bills per week; 2 near-miss allergy incidents a year</span></div>
+        </div>
+        <p><strong>Success looks like:</strong> orders reach the right kitchen station instantly, each dish's status is visible in real time, and bills calculate GST and surcharges correctly.</p>
+        <div class="callout">
+          <b>Australian context built into the requirements</b>
+          <p>Prices include 10% GST · NSW public-holiday surcharge disclosed per ACCC guidance · tax invoices on request (ATO) · allergen information for the 11 declared allergen groups (FSANZ Standard 1.2.3) · data stored in Australia.</p>
+        </div>
+      </section>
+
+      <section id="process">
+        <h2>Process: as-is to to-be</h2>
+        <p>I marked six numbered pain points on the as-is process, each backed by observation evidence, so the to-be design could show exactly which one it removes.</p>
+        <div class="gallery one">
+          <figure class="shot">
+            <img src="../assets/img/hloms-asis.webp" alt="BPMN as-is ordering process with six pain points marked in red" width="1800" height="632" loading="lazy">
+            <figcaption><b>As-is.</b> Paper ticket flow with six pain points (red dots).</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="../assets/img/hloms-tobe.webp" alt="BPMN to-be ordering process where the order reaches the kitchen in two seconds or less" width="1800" height="643" loading="lazy">
+            <figcaption><b>To-be.</b> Digital order reaches the kitchen station in ≤ 2 seconds.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="requirements">
+        <h2>Requirements</h2>
+        <ol class="steps">
+          <li><b>Business needs with baselines</b><span>7 business needs, each with a measured baseline and a 6-month target — e.g. wrong dishes from 3–5/day to ≤ 1/day.</span></li>
+          <li><b>Elicitation</b><span>Elicitation plan, a structured first meeting with a question log linked to who answers and how, minutes, and decision and change logs.</span></li>
+          <li><b>Stakeholders, risk and NFRs</b><span>Stakeholder analysis, RACI, risk register and 23 measurable NFRs rewritten from vague drafts like "the system must be fast".</span></li>
+          <li><b>User stories</b><span>40 stories (35 MVP) across 10 epics with 73 acceptance criteria, laid out on a story map by release.</span></li>
+        </ol>
+        <figure class="shot" style="margin-bottom:24px">
+          <img src="../assets/img/hloms-storymap.webp" alt="User story map with 40 stories across 10 epics and 3 release layers" width="1800" height="1097" loading="lazy">
+          <figcaption><b>User story map.</b> 40 stories, 10 epics, 3 release layers.</figcaption>
+        </figure>
+      </section>
+
+      <section id="design">
+        <h2>Design</h2>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Artefact</th><th class="num">Count</th><th>Why it was needed</th></tr></thead>
+            <tbody>
+              <tr><td>BPMN as-is / to-be</td><td class="num">7</td><td>Prove where the change removes each pain point</td></tr>
+              <tr><td>Use cases (with 7 detailed specs + activity diagrams)</td><td class="num">20</td><td>Exception flows exposed rules interviews had missed</td></tr>
+              <tr><td>Business rules</td><td class="num">21</td><td>Each rule has a truth table</td></tr>
+              <tr><td>Business functions</td><td class="num">34</td><td>Scope structure for the four sub-apps</td></tr>
+              <tr><td>State machines</td><td class="num">5</td><td>Order and order item have separate lifecycles</td></tr>
+              <tr><td>Prototype screens</td><td class="num">19</td><td>Waiter app, kitchen display, cashier, manager portal</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="callout">
+          <b>Example: a rule fixed by the use-case exception flow</b>
+          <p>The allergy rule was first written with AND. The exception flow showed it was really OR — "no allergy declared <em>or</em> the allergy note has been read". I corrected the logic and added a truth table for every rule.</p>
+        </div>
+      </section>
+
+      <section id="validation">
+        <h2>Validation</h2>
+        <p>The prototype runs the business rules, so user testing found business errors, not just layout issues — for example a split bill that was one cent short, which a static wireframe would never reveal.</p>
+        <div class="kpis">
+          <div class="kpi"><b>99</b><span>UAT test cases</span></div>
+          <div class="kpi"><b>100%</b><span>pass in round 2 (4 defects found and fixed)</span></div>
+          <div class="kpi"><b>0</b><span>traceability gaps: 35/35 stories · 73/73 AC · 21/21 rules</span></div>
+        </div>
+        <p>The traceability matrix and UAT counts are generated by a script that exits with an error on any gap. I added it after a hand count of high-priority test cases came out wrong (56 instead of 55).</p>
+      </section>
+
+      <section id="value">
+        <h2>Business value</h2>
+        <div class="table-wrap">
+          <table>
+            <tbody>
+              <tr><td>Year-1 cost</td><td class="num">AUD 49,200</td></tr>
+              <tr><td>Annual benefit</td><td class="num">AUD 40,700</td></tr>
+              <tr><td>Payback</td><td class="num">~18 months</td></tr>
+              <tr><td>3-year NPV</td><td class="num">AUD 45,900</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Final deliverables: BRD, SRS, UAT report, user guide, go-live plan, business case and pitch deck.</p>
+      </section>
+
+      <section id="learned">
+        <h2>What I learned</h2>
+        <ul>
+          <li><strong>A need without a baseline cannot prove value.</strong> Version 1 of the BACCM had qualitative needs only; version 1.1 split them into seven needs with numbers.</li>
+          <li><strong>Pure Scrum does not fit a client who signs fixed scope and budget.</strong> A hybrid — discovery to lock the BRD/SRS, then sprints — matched how the client buys.</li>
+          <li><strong>Anything counted by hand will eventually be wrong.</strong> Generating the RTM and test counts from source removed a whole class of errors.</li>
+        </ul>
+      </section>
+    </article>
+  </div>
+
+  <div class="container next-project">
+    <a href="eudr-coffee.html">
+      <span><small>Next case study</small><strong>EUDR-Ready Coffee: deforestation-free traceability</strong></span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>© <span data-year>2026</span> Nguyen Tan Tai</span>
+    <span>HL Restaurant is a simulated client; business figures, interviews and UAT results are practice data.</span>
+  </div>
+</footer>
+<script src="../assets/main.js"></script>
+</body>
+</html>
