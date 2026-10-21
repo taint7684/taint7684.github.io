@@ -142,6 +142,23 @@
     });
   });
 
+  // ---------- CV links: fall back to an email request if the PDF is missing ----------
+  var cvLinks = document.querySelectorAll('a[href$="Nguyen-Tan-Tai-CV.pdf"]');
+  if (cvLinks.length && /^https?:$/.test(location.protocol) && window.fetch) {
+    fetch(cvLinks[0].href, { method: "HEAD" }).then(function (r) {
+      if (r.ok) return;
+      cvLinks.forEach(function (a) {
+        a.removeAttribute("download");
+        a.href = "mailto:tainguyen7684@gmail.com?subject=CV%20request";
+        a.childNodes.forEach(function (n) {
+          if (n.nodeType === 3 && /Download CV/.test(n.textContent)) n.textContent = n.textContent.replace("Download CV", "Request CV");
+        });
+        var hint = a.querySelector(".hint");
+        if (hint) hint.textContent = "by email";
+      });
+    }).catch(function () { /* offline: leave links as they are */ });
+  }
+
   // ---------- Footer year ----------
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = String(new Date().getFullYear());
