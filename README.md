@@ -5,7 +5,7 @@ Trang portfolio tĩnh (HTML + CSS + JS), không cần build. Mở `index.html` b
 ## Cấu trúc
 
 ```
-index.html                    Trang chủ: giới thiệu, domain, 4 dự án, cách làm việc, kỹ năng, kinh nghiệm, liên hệ
+index.html                    Trang chủ: giới thiệu, domain, 4 dự án, cách làm việc, kỹ năng, liên hệ
 projects/eudr-coffee.html     Case study EUDR
 projects/social-insurance.html  Case study BHXH & TNCN (ẩn danh, không lộ thông tin khách)
 projects/battery-2030.html    Case study Battery 2030 (số 3)
@@ -27,7 +27,6 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 | 4 con số nổi bật | `index.html`, khối `class="stats"` |
 | Thẻ dự án trên trang chủ | `index.html`, các khối `<article class="work-card …">` (lưới 2×2) |
 | Kỹ năng | `index.html`, mỗi kỹ năng là một `<li class="tag">…</li>` |
-| Kinh nghiệm | `index.html`, mỗi công ty là một `<li class="job">` |
 | Email, GitHub, LinkedIn, số điện thoại | `index.html`, phần `CONTACT` (LinkedIn và SĐT đang bị comment — bỏ `<!--` `-->` để hiện) |
 | Nội dung case study | file trong `projects/` |
 
@@ -37,7 +36,7 @@ Chỉ sửa chữ giữa các thẻ HTML, giữ nguyên thẻ và `class`. Chỗ
 <!-- thêm một tag kỹ năng -->
 <li class="tag">Power BI</li>
 
-<!-- thêm một gạch đầu dòng kinh nghiệm -->
+<!-- thêm một gạch đầu dòng -->
 <li>Mô tả việc đã làm, bắt đầu bằng động từ quá khứ.</li>
 
 <!-- thêm ảnh có thể bấm phóng to -->
@@ -68,3 +67,5 @@ Lưu CV thành `assets/cv/Nguyen-Tan-Tai-CV.pdf`. Đổi tên file thì sửa li
 Trang `social-insurance.html` không có tên khách, tên sản phẩm, mã nội bộ, ảnh màn hình hay link tài liệu nội bộ. Nếu thêm nội dung thì giữ đúng nguyên tắc đó: chỉ dùng luật công khai và mô tả phương pháp làm việc.
 
 Không đưa sổ tay nghiệp vụ hay tài liệu dự án FIS vào portfolio (đã gỡ 21/10/2026 vì rủi ro bảo mật).
+
+Số năm kinh nghiệm và quá trình làm việc KHÔNG đưa lên portfolio (cập nhật trong CV). Portfolio tập trung vào case study.
